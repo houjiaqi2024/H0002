@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bnomx8g85rxj3"]
+[gd_scene load_steps=15 format=3 uid="uid://bnomx8g85rxj3"]
 
 [ext_resource type="Texture2D" uid="uid://s704rg2wsll" path="res://assets/images/characters/player/Biker/idle/biker_frame_0.png" id="1_58jdu"]
 [ext_resource type="Script" path="res://src/characters/biker/biker.gd" id="1_lu7bd"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://duhdpy81cs418" path="res://assets/images/characters/player/Biker/run/frame_3.png" id="8_xe130"]
 [ext_resource type="Texture2D" uid="uid://dejfwfbpaffqx" path="res://assets/images/characters/player/Biker/run/frame_4.png" id="9_ypb5x"]
 [ext_resource type="Texture2D" uid="uid://cgow1wbrhmths" path="res://assets/images/characters/player/Biker/run/frame_5.png" id="10_10p5m"]
+[ext_resource type="PackedScene" uid="uid://de7rxseajhelg" path="res://src/weapon/rotating_sword/rotating_sword.tscn" id="13_m4qbt"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_65pkk"]
 animations = [{
@@ -61,11 +62,14 @@ radius = 8.0
 [node name="Biker" type="CharacterBody2D"]
 script = ExtResource("1_lu7bd")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(8, -13)
+[node name="Actions" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_65pkk")
 animation = &"run"
+offset = Vector2(6, -10)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 2)
 shape = SubResource("CircleShape2D_y112b")
+
+[node name="RotatingSword" parent="." instance=ExtResource("13_m4qbt")]
+unique_name_in_owner = true
+scale = Vector2(3, 3)

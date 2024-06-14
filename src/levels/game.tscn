@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvmaq6lns1cw2"]
+
+[ext_resource type="Script" path="res://src/levels/game.gd" id="1_tu302"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_tu302")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.564962, 0.564962, 0.564962, 1)
