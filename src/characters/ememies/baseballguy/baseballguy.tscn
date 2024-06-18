@@ -1,0 +1,56 @@
+[gd_scene load_steps=11 format=3 uid="uid://dt63ymlwg005y"]
+
+[ext_resource type="Script" path="res://src/characters/ememies/baseballguy/Baseballguy.gd" id="1_ns2np"]
+[ext_resource type="Texture2D" uid="uid://csl1eineprqup" path="res://assets/images/enemies/Baseballguy/hurt/hurt_frame_0.png" id="2_ax1va"]
+[ext_resource type="Texture2D" uid="uid://cn5ld8sucadgy" path="res://assets/images/enemies/Baseballguy/hurt/hurt_frame_1.png" id="3_si6e0"]
+[ext_resource type="Texture2D" uid="uid://btxukwrkruvwi" path="res://assets/images/enemies/Baseballguy/walk/walk_frame_0.png" id="4_hwrk6"]
+[ext_resource type="Texture2D" uid="uid://b364e34wphqm8" path="res://assets/images/enemies/Baseballguy/walk/walk_frame_1.png" id="5_4g7q4"]
+[ext_resource type="Texture2D" uid="uid://lkmq0m1y04vw" path="res://assets/images/enemies/Baseballguy/walk/walk_frame_2.png" id="6_ww1fn"]
+[ext_resource type="Texture2D" uid="uid://obo6nqta16jm" path="res://assets/images/enemies/Baseballguy/walk/walk_frame_3.png" id="7_50ak8"]
+[ext_resource type="Texture2D" uid="uid://uqodjfyqp87i" path="res://assets/images/enemies/Baseballguy/walk/walk_frame_4.png" id="8_f56xs"]
+[ext_resource type="Texture2D" uid="uid://bfpwo1aq4a0ap" path="res://assets/images/enemies/Baseballguy/walk/walk_frame_5.png" id="9_5tufm"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n1bmv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ax1va")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_si6e0")
+}],
+"loop": true,
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_hwrk6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_4g7q4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ww1fn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_50ak8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_f56xs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_5tufm")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="Baseballguy" type="Node2D"]
+script = ExtResource("1_ns2np")
+
+[node name="Actions" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_n1bmv")
+animation = &"hurt"

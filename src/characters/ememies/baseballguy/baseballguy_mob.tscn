@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://d3fsjcpgab1wq"]
+
+[ext_resource type="Script" path="res://src/characters/ememies/baseballguy/Baseballguy_mob.gd" id="1_3ccfq"]
+[ext_resource type="PackedScene" uid="uid://dt63ymlwg005y" path="res://src/characters/ememies/baseballguy/baseballguy.tscn" id="2_we0yf"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kumcw"]
+radius = 7.0
+height = 28.0
+
+[node name="Baseballgiy_Mob" type="CharacterBody2D"]
+script = ExtResource("1_3ccfq")
+
+[node name="Baseballguy" parent="." instance=ExtResource("2_we0yf")]
+unique_name_in_owner = true
+position = Vector2(2, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -1)
+shape = SubResource("CapsuleShape2D_kumcw")
