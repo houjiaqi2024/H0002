@@ -7,7 +7,7 @@ const ENEMY = {
 }
 const ENEMY_NAME = {
 	BASEBALLGUY: "Baseballguy",
-	BAT: "Bat"
+	BAT: "Baseballguy"
 }
 
 enum {BASEBALLGUY, BAT}
@@ -31,7 +31,7 @@ func Random(amount, delay):
 func RandomFullSpawner(mobType: int, newStats, amount: int, delay: float):
 	for x in range(amount):
 		var spawn = ENEMY[mobType].instantiate()
-		spawn.mobName = ENEMY_NAME[mobType]
+		#spawn.mobName = ENEMY_NAME[mobType]
 		if newStats.size() != 0:
 			_set_stats(spawn, newStats)
 		%SpawnCircleFollow.progress_ratio = randf()

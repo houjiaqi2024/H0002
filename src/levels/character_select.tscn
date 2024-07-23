@@ -1,0 +1,103 @@
+[gd_scene load_steps=3 format=3 uid="uid://csr8734gmis4k"]
+
+[ext_resource type="Script" path="res://CharacterSelect.gd" id="1_l1haw"]
+[ext_resource type="Texture2D" uid="uid://s704rg2wsll" path="res://assets/images/characters/player/Biker/idle/biker_frame_0.png" id="2_xrigi"]
+
+[node name="CharacterSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+script = ExtResource("1_l1haw")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.0862745, 0.54902, 0.454902, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(1920, 360)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="PlayerA" type="Button" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(360, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+icon = ExtResource("2_xrigi")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="PlayerB" type="Button" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(360, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+icon = ExtResource("2_xrigi")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="PlayerC" type="Button" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(360, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+icon = ExtResource("2_xrigi")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="PlayerD" type="Button" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(360, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+icon = ExtResource("2_xrigi")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="PlayerE" type="Button" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(360, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+icon = ExtResource("2_xrigi")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(1920, 360)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(1920, 360)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="OK" type="Button" parent="VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(360, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "ok"
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/PlayerA" to="." method="_on_player_a_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/PlayerB" to="." method="_on_player_b_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/PlayerC" to="." method="_on_player_c_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/PlayerD" to="." method="_on_player_d_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/PlayerE" to="." method="_on_player_e_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer3/OK" to="." method="_on_ok_pressed"]
